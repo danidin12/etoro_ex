@@ -1,3 +1,12 @@
+## Table Of Contents
+---
+- [Getting Started](#getting-started)
+  - [Installations](#installations)
+  - [First Steps](#first-steps)
+- [NGINX Steps](#nginx-steps)
+- [Helm Steps](#helm-steps)
+- [Jenkins Steps](#jenkins-steps)
+
 # Getting Started
 
 ## Installations
@@ -65,6 +74,5 @@ password : Password1
    ```
 5. Run build 
 
-
-FINISH
-🔥🔥🔥🔥🔥🔥🔥🔥
+---
+🔥🔥🔥🔥🔥🔥🔥🔥 FINISH 🔥🔥🔥🔥🔥🔥🔥🔥
