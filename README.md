@@ -69,9 +69,9 @@ password : Password1
 3. Create a new item.
 4. Connect the item to the git repository.
 5. Add an execute shell run command in the build section.
-   ```
-   helm install simple-web ./simple-web
-   ```
+```
+helm install simple-web ./simple-web
+```
 6. Run build 
 
 ---
