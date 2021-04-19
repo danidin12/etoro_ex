@@ -66,13 +66,14 @@ user: user
 
 password : Password1
 1. Install jenkins.
-2. Create a new item.
-3. Connect the item to the git repository.
-4. Add an execute shell run command in the build section.
+2. Set root as jenkins run user.
+3. Create a new item.
+4. Connect the item to the git repository.
+5. Add an execute shell run command in the build section.
    ```
    helm install simple-web ./simple-web
    ```
-5. Run build 
+6. Run build 
 
 ---
 🔥🔥🔥🔥🔥🔥🔥🔥 FINISH 🔥🔥🔥🔥🔥🔥🔥🔥
