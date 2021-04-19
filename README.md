@@ -5,7 +5,7 @@
 - [NGINX Steps](#nginx-steps)
 - [Helm Steps](#helm-steps)
 - [Jenkins Steps](#jenkins-steps)
-  - [6. Run build & deploy](#6-run-build--deploy)
+  - [6. Run build & deploy.](#6-run-build--deploy)
 
 # Getting Started
 
@@ -101,6 +101,6 @@ password : Password1
     }
    ```
 
-6. Run build & deploy 
+6. Run build & deploy. 
 ---
 🔥🔥🔥🔥🔥🔥🔥🔥 FINISH 🔥🔥🔥🔥🔥🔥🔥🔥
