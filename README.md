@@ -1,5 +1,4 @@
 ## Table Of Contents
----
 - [Getting Started](#getting-started)
   - [Installations](#installations)
   - [First Steps](#first-steps)
@@ -68,24 +67,40 @@ password : Password1
 1. Install jenkins.
 2. Set root as jenkins run user.
 3. Create a new item.
-4. Connect the item to the git repository.
-5. Add an execute shell run command in the build section.
-   ```bash
-    set +e
-    kubectl get service simple-web
-    if [ $? -eq 0 ]
-    then 
-        helm uninstall simple-web
-    fi
-    kubectl get service simple-web
-    while [ $? -eq 0 ]
-    do
-        sleep 5
-        kubectl get service simple-web
-    done
-    helm install simple-web ./simple-web
+4. Use pipeline-syntax to generate git pipeline script.
+5. Add a pipeline with 2 stages.
+   ```groovy
+    pipeline {
+      agent any
+      stages {
+          stage('git'){
+              steps {
+                  git branch: 'main', credentialsId: 'danidin12', url: 'https://github.com/danidin12/etoro_ex.git'
+              }
+          }
+          stage('Deploy') {
+              steps {
+              sh '''
+                  set +e
+                  kubectl get service simple-web
+                  if [ $? -eq 0 ]
+                  then 
+                    helm uninstall simple-web
+                  fi
+                  kubectl get service simple-web
+                  while [ $? -eq 0 ]
+                  do
+                    sleep 5
+                    kubectl get service simple-web
+                  done
+                  helm install simple-web /var/lib/jenkins/workspace/simple-web/simple-web'''
+              }
+          }
+      }
+    }
    ```
-6. Run build 
+
+6. Run build & deploy 
 
 ---
 🔥🔥🔥🔥🔥🔥🔥🔥 FINISH 🔥🔥🔥🔥🔥🔥🔥🔥
