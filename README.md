@@ -6,25 +6,25 @@
 - kubectl
 
 ## First Steps
-1. Login to azure using managed identity
+1. Login to azure using managed identity.
 ```bash
     curl 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/' -H Metadata:true   
 ```
-2. Connect to AKS
+2. Connect to AKS.
 ```bash
 az aks get-credentials --resource-group devops-interview-rg --name devops-interview-aks
 
 kubectl config use-context devops-interview-aks
 ```
 
-3. Get nodes in order to check if the connection was successfully performed
+3. Check AKS connection by getting the cluster nodes.
 ```bash
 kubectl get nodes -o wide
 ```
 
 
 # NGINX Steps
-Install NGINX controller 
+1. Install NGINX controller.
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.45.0/deploy/static/provider/cloud/deploy.yaml
 
@@ -56,8 +56,8 @@ url : http://20.73.17.32:8080/
 user: user
 
 password : Password1
-1. Install jenkins 
-2. Create a new item 
+1. Install jenkins.
+2. Create a new item.
 3. Connect the item to the git repository.
 4. Add an execute shell run command in the build section.
    ```
