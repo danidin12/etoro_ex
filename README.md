@@ -70,8 +70,20 @@ password : Password1
 3. Create a new item.
 4. Connect the item to the git repository.
 5. Add an execute shell run command in the build section.
-   ```
-   helm install simple-web ./simple-web
+   ```bash
+    set +e
+    kubectl get service simple-web
+    if [ $? -eq 0 ]
+    then 
+        helm uninstall simple-web
+    fi
+    kubectl get service simple-web
+    while [ $? -eq 0 ]
+    do
+        sleep 5
+        kubectl get service simple-web
+    done
+    helm install simple-web ./simple-web
    ```
 6. Run build 
 
