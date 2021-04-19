@@ -1,5 +1,4 @@
 ## Table Of Contents
----
 - [Getting Started](#getting-started)
   - [Installations](#installations)
   - [First Steps](#first-steps)
